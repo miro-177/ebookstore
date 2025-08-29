@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book Info</title>
+    <link rel="stylesheet" href="/css.css" />
+</head>
+<body>
+
+<div class="book-container">
+    <h1>{{title}}</h1>
+    <p><strong>Publication Year:</strong> {{publicationYear}}</p>
+    <p><strong>Publisher:</strong> {{publisherName}}</p>
+
+    <p><strong>Authors:</strong></p>
+    <ul>
+        {{#authors}}
+            <li>{{firstName}} {{lastName}}</li>
+        {{/authors}}
+    </ul>
+
+    <form method="post" action="/loan">
+        <input type="hidden" name="bookId" value="{{bookId}}">
+        <button type="submit" class="loan-button">Loan this Book</button>
+    </form>
+</div>
+
+</body>
+</html>
